@@ -8,45 +8,42 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.onb.employeereg.domain.SalaryConfig;
+import com.onb.employeereg.dao.BranchDAO;
+import com.onb.employeereg.dao.DepartmentDAO;
+import com.onb.employeereg.dao.EmployeeDAO;
+import com.onb.employeereg.dao.SalaryConfigDAO;
 
 @Service("salaryConfigService")
 @Transactional
-public class SalaryConfigServiceImpl implements SalaryConfigService{
+public class SalaryConfigServiceImpl implements SalaryConfigService {
 
 	protected static Logger logger = Logger.getLogger("service");
-	
-	@Resource(name="sessionFactory")
-	private SessionFactory sessionFactory;
-	
-	public SalaryConfig get( Integer id ) {
-		// Retrieve session from Hibernate
-		Session session = sessionFactory.getCurrentSession();
-		
-		// Retrieve existing branch first
-		SalaryConfig salaryConfig = (SalaryConfig) session.get(SalaryConfig.class, id);
-		
-		return salaryConfig;
-	}
-	
-	public void edit(SalaryConfig salaryConfig) {
-		logger.debug("Editing existing branch");
-		
-		// Retrieve session from Hibernate
-		Session session = sessionFactory.getCurrentSession();
-		
-		// Retrieve existing branch via id
-		SalaryConfig presentSalary = (SalaryConfig) session.get(SalaryConfig.class, salaryConfig.getId());
-		
-		// Assign updated values to this branch
-		presentSalary.setPagibig(salaryConfig.getPagibig());
-		presentSalary.setTax(salaryConfig.getTax());
-		presentSalary.setSss(salaryConfig.getSss());
 
-		// Save updates
-		session.save(presentSalary);
+	@Resource(name = "sessionFactory")
+	private SessionFactory sessionFactory;
+
+	@Autowired
+	private BranchDAO branchDAO;
+
+	@Autowired
+	private DepartmentDAO departmentDAO;
+
+	@Autowired
+	private EmployeeDAO employeeDAO;
+
+	@Autowired
+	private SalaryConfigDAO salaryConfigDAO;
+
+	public SalaryConfig get(Integer id) {
+		return salaryConfigDAO.get(id);
+	}
+
+	public void edit(SalaryConfig salaryConfig) {
+		salaryConfigDAO.edit(salaryConfig);
 	}
 }

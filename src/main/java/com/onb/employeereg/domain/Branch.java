@@ -17,13 +17,13 @@ public class Branch implements Serializable {
 	@Column(name = "ID")
 	@GeneratedValue
 	private Integer id;
-	
+
 	@Column(name = "BRANCH_NAME")
 	private String branchName;
-	
+
 	@Column(name = "BRANCH_LOCATION")
 	private String branchLocation;
-	
+
 	@Column(name = "BRANCH_CONTACT_NUMBER")
 	private Long branchContactNumber;
 
@@ -50,7 +50,7 @@ public class Branch implements Serializable {
 	public void setBranchLocation(String branchLocation) {
 		this.branchLocation = branchLocation;
 	}
-	
+
 	public Long getBranchContactNumber() {
 		return branchContactNumber;
 	}

@@ -18,13 +18,13 @@ public class Employee implements Serializable {
 	@Column(name = "ID")
 	@GeneratedValue
 	private Integer id;
-	
+
 	@Column(name = "DEPARTMENT_ID")
 	private Integer departmentId;
 
 	@Column(name = "EMPLOYEE_NAME")
 	private String employeeName;
-	
+
 	@Column(name = "EMPLOYEE_GROSS_SALARY")
 	private String employeeGrossSalary;
 

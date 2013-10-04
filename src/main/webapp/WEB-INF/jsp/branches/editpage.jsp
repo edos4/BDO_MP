@@ -38,6 +38,7 @@
 	
 	<input type="submit" value="Save" />
 </form:form>
+<a href="http://localhost:8080/employee/branches">Back</a>
 <br>
 </body>
 </html>

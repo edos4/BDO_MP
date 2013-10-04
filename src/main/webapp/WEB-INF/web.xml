@@ -21,21 +21,20 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
-	
-	<!-- 
 	<listener>
     <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-</listener> -->
+</listener>
 
-<!-- <context-param>
+	<!-- Spring Security -->
+	<!-- 
+	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			/WEB-INF/spring-security.xml,
-			/WEB-INF/applicationContext.xml
+			/WEB-INF/mvc-dispatcher-servlet.xml,
+			/WEB-INF/spring-security.xml
 		</param-value>
-	</context-param> -->
- 
-	<!-- Spring Security
+	</context-param>	
+	
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>
@@ -45,7 +44,7 @@
  
 	<filter-mapping>
 		<filter-name>springSecurityFilterChain</filter-name>
-		<url-pattern>/login*</url-pattern>
-	</filter-mapping>
-	 -->
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+ 
 </web-app>

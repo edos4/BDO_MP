@@ -43,6 +43,7 @@
 <c:if test="${empty branches}">
 	There are currently no branches in the list.
 </c:if>
+<a href="../employee">Back</a><br>
 <br>
 </body>
 </html>

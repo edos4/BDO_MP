@@ -34,6 +34,7 @@
 	
 	<input type="submit" value="Save" />
 </form:form>
-
+<a href="../employee">Back</a><br>
+<br>
 </body>
 </html>

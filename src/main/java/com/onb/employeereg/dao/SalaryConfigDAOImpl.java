@@ -15,38 +15,34 @@ import com.onb.employeereg.domain.SalaryConfig;
 
 @Service("salaryConfigServices")
 @Transactional
-public class SalaryConfigDAOImpl implements SalaryConfigDAO{
+public class SalaryConfigDAOImpl implements SalaryConfigDAO {
 
 	protected static Logger logger = Logger.getLogger("service");
-	
-	@Resource(name="sessionFactory")
+
+	@Resource(name = "sessionFactory")
 	private SessionFactory sessionFactory;
-	
-	public SalaryConfig get( Integer id ) {
-		// Retrieve session from Hibernate
+
+	public SalaryConfig get(Integer id) {
 		Session session = sessionFactory.getCurrentSession();
-		
-		// Retrieve existing branch first
-		SalaryConfig salaryConfig = (SalaryConfig) session.get(SalaryConfig.class, id);
-		
+
+		SalaryConfig salaryConfig = (SalaryConfig) session.get(
+				SalaryConfig.class, id);
+
 		return salaryConfig;
 	}
-	
+
 	public void edit(SalaryConfig salaryConfig) {
 		logger.debug("Editing existing branch");
-		
-		// Retrieve session from Hibernate
+
 		Session session = sessionFactory.getCurrentSession();
-		
-		// Retrieve existing branch via id
-		SalaryConfig presentSalary = (SalaryConfig) session.get(SalaryConfig.class, salaryConfig.getId());
-		
-		// Assign updated values to this branch
+
+		SalaryConfig presentSalary = (SalaryConfig) session.get(
+				SalaryConfig.class, salaryConfig.getId());
+
 		presentSalary.setPagibig(salaryConfig.getPagibig());
 		presentSalary.setTax(salaryConfig.getTax());
 		presentSalary.setSss(salaryConfig.getSss());
 
-		// Save updates
 		session.save(presentSalary);
 	}
 }

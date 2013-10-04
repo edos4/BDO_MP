@@ -20,16 +20,16 @@ public class Department implements Serializable {
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer id;
-	
+
 	@Column(name = "BRANCH_ID")
 	private Integer branchId;
 
 	@Column(name = "DEPARTMENT_NAME")
 	private String departmentName;
-	
+
 	@Column(name = "DEPARTMENT_Bonus")
 	private BigDecimal departmentBonus;
-	
+
 	public Integer getBranchId() {
 		return branchId;
 	}
@@ -37,7 +37,7 @@ public class Department implements Serializable {
 	public void setBranchId(Integer branchId) {
 		this.branchId = branchId;
 	}
-	
+
 	public String getDepartmentName() {
 		return departmentName;
 	}
@@ -53,7 +53,7 @@ public class Department implements Serializable {
 	public void setDepartmentBonus(BigDecimal departmentBonus) {
 		this.departmentBonus = departmentBonus;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -61,6 +61,5 @@ public class Department implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 
 }

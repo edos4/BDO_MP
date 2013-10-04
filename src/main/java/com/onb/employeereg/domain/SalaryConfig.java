@@ -19,7 +19,7 @@ public class SalaryConfig implements Serializable {
 	@Column(name = "ID")
 	@GeneratedValue
 	private Integer id;
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -30,10 +30,10 @@ public class SalaryConfig implements Serializable {
 
 	@Column(name = "TAX")
 	private BigDecimal tax;
-	
+
 	@Column(name = "PAGIBIG")
 	private BigDecimal pagibig;
-	
+
 	@Column(name = "SSS")
 	private BigDecimal sss;
 

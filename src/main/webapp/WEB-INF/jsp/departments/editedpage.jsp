@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title></title>
 </head>
 <body>
 
-<h1>Branch</h1>
+<h1>Department</h1>
 
-<p>You have successfully edited the branch with id ${id}!</p>
+<p>You have successfully edited the department!</p>
 
 <c:url var="mainUrl" value="/branches" />
 <p>Return to <a href="${mainUrl}">Main List</a></p>

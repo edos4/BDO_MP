@@ -8,82 +8,55 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.onb.employeereg.domain.Branch;
 import com.onb.employeereg.domain.Department;
+import com.onb.employeereg.dao.BranchDAO;
+import com.onb.employeereg.dao.DepartmentDAO;
+import com.onb.employeereg.dao.EmployeeDAO;
+import com.onb.employeereg.dao.SalaryConfigDAO;
 
 @Service("departmentService")
 @Transactional
-public class DepartmentServiceImpl implements DepartmentService{
+public class DepartmentServiceImpl implements DepartmentService {
 
 	protected static Logger logger = Logger.getLogger("service");
-	
-	@Resource(name="sessionFactory")
+
+	@Resource(name = "sessionFactory")
 	private SessionFactory sessionFactory;
-	
+
+	@Autowired
+	private BranchDAO branchDAO;
+
+	@Autowired
+	private DepartmentDAO departmentDAO;
+
+	@Autowired
+	private EmployeeDAO employeeDAO;
+
+	@Autowired
+	private SalaryConfigDAO salaryConfigDAO;
+
 	public List<Department> getAll(Integer id) {
-		logger.debug("Retrieving all departments");
-		
-		// Retrieve session from Hibernate
-		Session session = sessionFactory.getCurrentSession();
-		
-		// Create a Hibernate query (HQL)
-		Query query = session.createQuery("FROM Department where branch_id = ?");
-		query.setParameter(0, id);
-		
-		// Retrieve all
-		
-		return  query.list();
+		return departmentDAO.getAll();
 	}
-	
-	public Department get( Integer id ) {
-		// Retrieve session from Hibernate
-		Session session = sessionFactory.getCurrentSession();
-		
-		// Retrieve existing department first
-		Department department = (Department) session.get(Department.class, id);
-		return department;
+
+	public Department get(Integer id) {
+		return departmentDAO.get(id);
 	}
-	
+
 	public void add(Department department) {
-		logger.debug("Adding new department");
-		
-		// Retrieve session from Hibernate
-		Session session = sessionFactory.getCurrentSession();
-		
-		// Save
-		session.save(department);
+		departmentDAO.add(department);
 	}
 
 	public void delete(Integer id) {
-		logger.debug("Deleting existing department");
-		
-		// Retrieve session from Hibernate
-		Session session = sessionFactory.getCurrentSession();
-		
-		// Retrieve existing branch first
-		Department department = (Department) session.get(Department.class, id);
-		
-		// Delete 
-		session.delete(department);
+		departmentDAO.delete(id);
 	}
 
 	public void edit(Department department) {
-		logger.debug("Editing existing department");
-		
-		// Retrieve session from Hibernate
-		Session session = sessionFactory.getCurrentSession();
-		
-		// Retrieve existing branch via id
-		Department existingDepartment = (Department) session.get(Department.class, department.getId());
-		
-		// Assign updated values to this branch
-		existingDepartment.setDepartmentName(department.getDepartmentName());
-		existingDepartment.setDepartmentBonus(department.getDepartmentBonus());
-
-		// Save updates
-		session.save(existingDepartment);
+		departmentDAO.edit(department);
 	}
 }

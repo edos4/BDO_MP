@@ -13,34 +13,35 @@ import com.onb.employeereg.service.BranchService;
 import com.onb.employeereg.service.DepartmentService;
 
 public class BranchControllerTest {
-	public BranchControllerTest(){}
-	
+	public BranchControllerTest() {
+	}
+
 	@Mock
 	private DepartmentService departmentService;
-	
+
 	@Mock
 	private BranchService branchService;
-	
+
 	private Branch branch;
-	
+
 	@Before
 	public void onSetup() {
 		Branch branch = new Branch();
-		branch.setBranchContactNumber((long)123);
+		branch.setBranchContactNumber((long) 123);
 		branch.setBranchLocation("Here");
 		branch.setBranchName("AwesomeBank");
 		branch.setId(1);
 		branchService.add(branch);
 	}
-	
+
 	@After
 	public void onTearDown() {
-		/*branch.setBranchContactNumber(null);
-		branch.setBranchLocation(null);
-		branch.setBranchName(null);
-		branch.setId(null);*/
+		/*
+		 * branch.setBranchContactNumber(null); branch.setBranchLocation(null);
+		 * branch.setBranchName(null); branch.setId(null);
+		 */
 	}
-	
+
 	@Test
 	public void getBranches() {
 		// given
@@ -50,8 +51,8 @@ public class BranchControllerTest {
 		List<Branch> branches = branchService.getAll();
 
 		// then
-		
+
 		System.out.println(branches.size());
 	}
-	
+
 }

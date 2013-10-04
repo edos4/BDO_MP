@@ -6,16 +6,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
 
-<h1>Branch</h1>
+<h1>Salary Settings</h1>
 
-<p>You have successfully edited the branch with id ${id}!</p>
+<p>You have successfully edited the salary settings.</p>
 
 <c:url var="mainUrl" value="/settings" />
-<p>Return to <a href="${mainUrl}">Main List</a></p>
+<p>Return to <a href="${mainUrl}">Back</a></p>
 
 </body>
 </html>

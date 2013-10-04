@@ -14,6 +14,7 @@
 </style>
 </head>
 <body>
+
 	<c:url var="branches" value="/branches/" />
 	<c:url var="branchProfile" value="/branches/view?id=${branchAttribute.id}" />
 	<h1>
