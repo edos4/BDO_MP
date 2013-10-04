@@ -22,7 +22,7 @@
 	</definition>
 	
 	<definition name="addpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Add Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/branches/addpage.jsp" />
@@ -30,7 +30,7 @@
 	</definition>
 
 	<definition name="editpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Edit Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/branches/editpage.jsp" />
@@ -38,7 +38,7 @@
 	</definition>
 	
 	<definition name="editedpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Edited Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/branches/editedpage.jsp" />
@@ -46,7 +46,7 @@
 	</definition>
 	
 	<definition name="branchprofile" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Branch Profile" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/branches/branchprofile.jsp" />
@@ -56,7 +56,7 @@
 <!-- Department Controller -->
 
 	<definition name="daddpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Department Add Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/departments/addpage.jsp" />
@@ -64,7 +64,7 @@
 	</definition>
 	
 	<definition name="daddedpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Department Added Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/departments/addedpage.jsp" />
@@ -72,7 +72,7 @@
 	</definition>
 	
 	<definition name="ddeletedpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Department Deleted Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/departments/deletedpage.jsp" />
@@ -80,7 +80,7 @@
 	</definition>
 	
 	<definition name="deditpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Department Edit Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/departments/editpage.jsp" />
@@ -88,7 +88,7 @@
 	</definition>
 	
 	<definition name="deditedpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Department Edited Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/departments/editedpage.jsp" />
@@ -96,7 +96,7 @@
 	</definition>
 	
 	<definition name="ddepartmentprofile" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Department Profile Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/departments/departmentprofile.jsp" />
@@ -106,7 +106,7 @@
 <!-- Employee Controller -->
 
 	<definition name="eaddpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Employee Add Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/employees/addpage.jsp" />
@@ -114,15 +114,7 @@
 	</definition>
 	
 	<definition name="eaddedpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
-		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
-		<put-attribute name="body"
-			value="/WEB-INF/jsp/employees/addedpage.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
-	</definition>
-	
-	<definition name="eaddedpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Employee Added Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/employees/addedpage.jsp" />
@@ -130,7 +122,7 @@
 	</definition>
 	
 	<definition name="edeletedpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Employee Deleted Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/employees/deletedpage.jsp" />
@@ -138,7 +130,7 @@
 	</definition>
 	
 	<definition name="eeditpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Employee Edit Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/employees/editpage.jsp" />
@@ -146,7 +138,7 @@
 	</definition>
 	
 	<definition name="eeditedpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Employee Edited Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/employees/editedpage.jsp" />
@@ -154,7 +146,7 @@
 	</definition>
 	
 	<definition name="eemployeeprofile" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Employee Profile Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/employees/employeeprofile.jsp" />
@@ -164,7 +156,7 @@
 <!-- Salary Controller -->
 
 	<definition name="seditpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Salary Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/salary/editpage.jsp" />
@@ -172,7 +164,7 @@
 	</definition>
 	
 	<definition name="seditedpage" template="/WEB-INF/jsp/layout.jsp">
-		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="title" value="Salary Edited Page" />
 		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/salary/editedpage.jsp" />
