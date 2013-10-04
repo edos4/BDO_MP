@@ -24,11 +24,8 @@ public class BranchDAOImpl implements BranchDAO {
 
 	public List<Branch> getAll() {
 		logger.debug("Retrieving all branches");
-
 		Session session = sessionFactory.getCurrentSession();
-
 		Query query = session.createQuery("FROM  Branch");
-
 		return query.list();
 	}
 
@@ -70,6 +67,6 @@ public class BranchDAOImpl implements BranchDAO {
 		existingBranch.setBranchLocation(branch.getBranchLocation());
 		existingBranch.setBranchContactNumber(branch.getBranchContactNumber());
 
-		session.save(existingBranch);
+		session.save(branch);
 	}
 }
