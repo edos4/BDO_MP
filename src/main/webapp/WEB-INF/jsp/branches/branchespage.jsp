@@ -29,21 +29,19 @@
 	<tbody>
 	<c:forEach items="${branches}" var="branches">
 			<c:url var="editUrl" value="/branches/edit?id=${branches.id}" />
-			<c:url var="deleteUrl" value="/branches/delete?id=${branches.id}" />
 			<c:url var="viewUrl" value="/branches/view?id=${branches.id}" />
 		<tr>
 			<td><a href="${viewUrl}"><c:out value="${branches.branchName}" /></a></td>
 			<td><c:out value="${branches.branchLocation}" /></td>
 			<td><c:out value="${branches.branchContactNumber}" /></td>
 			<td><a href="${editUrl}">Edit</a></td>
-			<td><a href="${deleteUrl}">Delete</a></td>
 		</tr>
 	</c:forEach>
 	</tbody>
 </table>
 
 <c:if test="${empty branches}">
-	There are currently no branches in the list. <a href="${addUrl}">Add</a> a Branch.
+	There are currently no branches in the list.
 </c:if>
 
 </body>

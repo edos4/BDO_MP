@@ -26,23 +26,10 @@
 				 p:dataSource-ref="dataSource"
 				 p:configLocation="${hibernate.config}"
 				 p:packagesToScan="com.onb.employeereg"/>
-	
-	<!-- Declare a datasource that has pooling capabilities-->	 
-	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-				destroy-method="close"
-				p:driverClass="${app.jdbc.driverClassName}"
-				p:jdbcUrl="${app.jdbc.url}"
-				p:user="${app.jdbc.username}"
-				p:password="${app.jdbc.password}"
-				
-				p:idleConnectionTestPeriod="60"
-				p:maxPoolSize="100"
-				p:maxStatements="50"
-				p:minPoolSize="10" /> -->
 				
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 				p:driverClassName="org.postgresql.Driver"
-				p:url="jdbc:postgresql://localhost:5432/mydatabase"
+				p:url="jdbc:postgresql://localhost:5432/employeeMgt"
 				p:username="postgres"
 				p:password="postgres"
 				 />

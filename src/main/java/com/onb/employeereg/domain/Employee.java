@@ -1,4 +1,4 @@
-/*package com.onb.employeereg.domain;
+package com.onb.employeereg.domain;
 
 import java.io.Serializable;
 
@@ -59,4 +59,4 @@ public class Employee implements Serializable {
 	public void setEmployeeGrossSalary(String employeeGrossSalary) {
 		this.employeeGrossSalary = employeeGrossSalary;
 	}
-}*/
+}

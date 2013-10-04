@@ -1,6 +1,7 @@
 package com.onb.employeereg.domain;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,8 +27,8 @@ public class Department implements Serializable {
 	@Column(name = "DEPARTMENT_NAME")
 	private String departmentName;
 	
-	@Column(name = "DEPARTMENT_DESCRIPTION")
-	private String departmentDescription;
+	@Column(name = "DEPARTMENT_Bonus")
+	private BigDecimal departmentBonus;
 	
 	public Integer getBranchId() {
 		return branchId;
@@ -45,12 +46,12 @@ public class Department implements Serializable {
 		this.departmentName = departmentName;
 	}
 
-	public String getDepartmentDescription() {
-		return departmentDescription;
+	public BigDecimal getDepartmentBonus() {
+		return departmentBonus;
 	}
 
-	public void setDepartmentDescription(String departmentDescription) {
-		this.departmentDescription = departmentDescription;
+	public void setDepartmentBonus(BigDecimal departmentBonus) {
+		this.departmentBonus = departmentBonus;
 	}
 	
 	public Integer getId() {

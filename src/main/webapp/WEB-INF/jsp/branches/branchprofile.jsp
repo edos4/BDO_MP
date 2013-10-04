@@ -51,7 +51,7 @@
 					<thead style="background: #0b276e;">
 						<tr>
 							<th>Name</th>
-							<th>Location</th>
+							<th>Department Bonus</th>
 							<th colspan="2">Action</th>
 						</tr>
 					</thead>
@@ -62,13 +62,13 @@
 							<c:url var="deleteUrl"
 								value="/departments/delete?id=${departments.id}" />
 							<c:url var="viewUrl"
-								value="/departments/view?id=${departments.id}" />
+								value="/departments/view?id=${departments.id}&bid=${branchAttribute.id}" />
 							
 							
 							<tr>
 								<td><a href="${viewUrl}"><c:out
 											value="${departments.departmentName}" /></a></td>
-								<td><c:out value="${departments.departmentDescription}" /></td>
+								<td><c:out value="${departments.departmentBonus}" /></td>
 								<td><a href="${editUrl}">Edit</a></td>
 								<td><a href="${deleteUrl}">Delete</a></td>
 							</tr>
@@ -76,7 +76,7 @@
 					</tbody>
 				</table> 
 					<c:if test="${empty departments}">
-					There are currently no departments in the lists. <a href="${addUrl2}">Add</a> a department.
+					There are currently no departments in the lists.
 				</c:if>			
 			</td>
 		</tr>

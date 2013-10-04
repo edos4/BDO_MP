@@ -21,8 +21,8 @@
 		</tr>
 
 		<tr>
-			<td><form:label path="departmentDescription">Description: </form:label></td>
-			<td><form:input path="departmentDescription"/></td>
+			<td><form:label path="departmentBonus">Bonus: </form:label></td>
+			<td><form:input path="departmentBonus"/></td>
 			<form:hidden path="branchId" value="${ id }"/>
 		</tr>
 		

@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.onb.employeereg.domain.Branch;
 
 
-//@Service("branchService")
+@Service("branchServices")
 @Transactional
 public class BranchDAOImpl implements BranchDAO{
 

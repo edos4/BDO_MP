@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.onb.employeereg.domain.Branch;
 import com.onb.employeereg.domain.Department;
 
 @Service("departmentService")
@@ -22,11 +23,6 @@ public class DepartmentServiceImpl implements DepartmentService{
 	@Resource(name="sessionFactory")
 	private SessionFactory sessionFactory;
 	
-	/**
-	 * Retrieves all departments
-	 * 
-	 * @return a list of departments
-	 */
 	public List<Department> getAll(Integer id) {
 		logger.debug("Retrieving all departments");
 		
@@ -42,21 +38,15 @@ public class DepartmentServiceImpl implements DepartmentService{
 		return  query.list();
 	}
 	
-	/**
-	 * Retrieves a single branch
-	 */
 	public Department get( Integer id ) {
 		// Retrieve session from Hibernate
 		Session session = sessionFactory.getCurrentSession();
 		
-		// Retrieve existing branch first
+		// Retrieve existing department first
 		Department department = (Department) session.get(Department.class, id);
-		
 		return department;
 	}
-	/**
-	 * Adds a new branch
-	 */
+	
 	public void add(Department department) {
 		logger.debug("Adding new department");
 		
@@ -66,11 +56,7 @@ public class DepartmentServiceImpl implements DepartmentService{
 		// Save
 		session.save(department);
 	}
-	
-	/**
-	 * Deletes an existing department
-	 * @param id the id of the existing department
-	 */
+
 	public void delete(Integer id) {
 		logger.debug("Deleting existing department");
 		
@@ -83,10 +69,7 @@ public class DepartmentServiceImpl implements DepartmentService{
 		// Delete 
 		session.delete(department);
 	}
-	
-	/**
-	 * Edits an existing branch
-	 */
+
 	public void edit(Department department) {
 		logger.debug("Editing existing department");
 		
@@ -98,7 +81,7 @@ public class DepartmentServiceImpl implements DepartmentService{
 		
 		// Assign updated values to this branch
 		existingDepartment.setDepartmentName(department.getDepartmentName());
-		existingDepartment.setDepartmentDescription(department.getDepartmentDescription());
+		existingDepartment.setDepartmentBonus(department.getDepartmentBonus());
 
 		// Save updates
 		session.save(existingDepartment);

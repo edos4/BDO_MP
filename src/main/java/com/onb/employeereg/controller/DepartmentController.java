@@ -1,7 +1,5 @@
 package com.onb.employeereg.controller;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
@@ -14,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.onb.employeereg.domain.Branch;
 import com.onb.employeereg.domain.Department;
+import com.onb.employeereg.service.BranchService;
 import com.onb.employeereg.service.DepartmentService;
+import com.onb.employeereg.service.EmployeeService;
 
 
 /**
@@ -28,6 +28,10 @@ public class DepartmentController {
 	
 	@Resource(name="departmentService")
 	private DepartmentService departmentService;
+	@Resource(name="branchService")
+	private BranchService branchService;
+	@Resource(name="employeeService")
+	private EmployeeService employeeService;
 	    
     /**
      * Retrieves the add page
@@ -47,31 +51,15 @@ public class DepartmentController {
     	return "departments/addpage";
 	}
  
-    /**
-     * Adds a new department by delegating the processing to DepartmentDAO.
-     * Displays a confirmation JSP page
-     * 
-     * @return  the name of the JSP page
-     */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String add(@ModelAttribute("departmentAttribute") Department department) {
 		logger.debug("Received request to add new department");
 		
-    	// The "departmentAttribute" model has been passed to the controller from the JSP
-    	// We use the name "departmentAttribute" because the JSP uses that name
+		departmentService.add(department);
 		
-		// Call BranchDAO to do the actual adding
-
-    	// This will resolve to /WEB-INF/jsp/addedpage.jsp
 		return "departments/addedpage";
 	}
-    
-    /**
-     * Deletes an existing department by delegating the processing to BranchDAO.
-     * Displays a confirmation JSP page
-     * 
-     * @return  the name of the JSP page
-     */
+
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String delete(@RequestParam(value="id", required=true) Integer id, 
     										Model model) {
@@ -87,12 +75,7 @@ public class DepartmentController {
     	// This will resolve to /WEB-INF/jsp/deletedpage.jsp
 		return "departments/deletedpage";
 	}
-    
-    /**
-     * Retrieves the edit page
-     * 
-     * @return the name of the JSP page
-     */
+
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
     public String getEdit(@RequestParam(value="id", required=true) Integer id,  
     										Model model) {
@@ -130,17 +113,16 @@ public class DepartmentController {
 		return "departments/editedpage";
 	}
     
-    @RequestMapping(value = "/departments/view", method = RequestMethod.GET)
-    public String getView(@RequestParam(value="id", required=true) Integer id,  
+    @RequestMapping(value = "/view", method = RequestMethod.GET)
+    public String getView(@RequestParam(value="id", required=true) Integer id, 
+    					   @RequestParam(value="bid", required=true) Integer bid, 
     										Model model) {
     	logger.debug("Received request to show edit page");
-    
-    	// Retrieve existing Branch and add to model
-    	// This is the formBackingOBject
+        
     	model.addAttribute("departmentAttribute", departmentService.get(id));
+    	model.addAttribute("employees", employeeService.getAll(id));
+    	model.addAttribute("branchAttribute", branchService.get(bid));
     	
-    	// This will resolve to /WEB-INF/jsp/editpage.jsp
-    	return "departments/branchprofile";
+    	return "departments/departmentprofile";
 	}
-    
 }

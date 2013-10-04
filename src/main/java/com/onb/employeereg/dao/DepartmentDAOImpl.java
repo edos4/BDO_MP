@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.onb.employeereg.domain.Department;
 
-//@Service("departmentService")
+@Service("departmentServices")
 @Transactional
 public class DepartmentDAOImpl implements DepartmentDAO{
 
@@ -95,7 +95,7 @@ public class DepartmentDAOImpl implements DepartmentDAO{
 		
 		// Assign updated values to this department
 		existingDepartment.setDepartmentName(department.getDepartmentName());
-		existingDepartment.setDepartmentDescription(department.getDepartmentDescription());
+		existingDepartment.setDepartmentBonus(department.getDepartmentBonus());
 
 		// Save updates
 		session.save(existingDepartment);

@@ -33,6 +33,7 @@
 	
 	<input type="submit" value="Save" />
 </form:form>
-
+<c:url var="back" value="/branches" />
+<a href="${back}">Back</a>
 </body>
 </html>
