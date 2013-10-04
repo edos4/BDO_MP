@@ -38,7 +38,7 @@ public class EmployeeController {
     	model.addAttribute("employeeAttribute", new Employee());
     	model.addAttribute("id", id);
 
-    	return "employees/addpage";
+    	return "eaddpage";
 	}
  
     @RequestMapping(value = "/add", method = RequestMethod.POST)
@@ -47,7 +47,7 @@ public class EmployeeController {
 		
     	employeeService.add(employee);
 		
-		return "employees/addedpage";
+		return "eaddedpage";
 	}
     
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
@@ -63,7 +63,7 @@ public class EmployeeController {
 		model.addAttribute("id", id);
     	
     	// This will resolve to /WEB-INF/jsp/deletedpage.jsp
-		return "employees/deletedpage";
+		return "edeletedpage";
 	}
     
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
@@ -73,7 +73,7 @@ public class EmployeeController {
     
     	model.addAttribute("employeeAttribute", employeeService.get(id));
     	
-    	return "employees/editpage";
+    	return "eeditpage";
 	}
     
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
@@ -88,7 +88,7 @@ public class EmployeeController {
     	
 		model.addAttribute("id", id);
 		
-		return "employees/editedpage";
+		return "eeditedpage";
 	}
     
     @RequestMapping(value = "/view", method = RequestMethod.GET)
@@ -105,7 +105,7 @@ public class EmployeeController {
     	
     	model.addAttribute("departmentAttribute", departmentService.get(departmentId));
     	
-    	return "employees/employeeprofile";
+    	return "eemployeeprofile";
 	}
     
 }

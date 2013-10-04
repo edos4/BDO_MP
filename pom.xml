@@ -8,7 +8,7 @@
 	<name>employee Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-servlet</artifactId>
 			<version>2.2.2</version>
@@ -18,12 +18,18 @@
 					<artifactId>jcl-over-slf4j</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
+		</dependency> -->
 		
-<!-- <dependency>
+    <dependency>
     	<groupId>org.apache.tiles</groupId>
     	<artifactId>tiles-core</artifactId>
     	<version>2.2.2</version>
+    	<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>jcl-over-slf4j</artifactId>
+				</exclusion>
+			</exclusions>
     	<type>jar</type>
     	<scope>compile</scope>
     </dependency>
@@ -48,7 +54,7 @@
     	<type>jar</type>
     	<scope>compile</scope>
     </dependency>		
-     -->
+     
 
 		<dependency>
 			<groupId>org.mockito</groupId>

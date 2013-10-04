@@ -39,7 +39,8 @@ public class BranchController {
     	
     	model.addAttribute("branches", branches);
     	
-    	return "branches/branchespage";
+    	//return "branches/branchespage";
+    	return "branchespage";
 	}
     
 
@@ -49,32 +50,18 @@ public class BranchController {
     
     	model.addAttribute("branchAttribute", new Branch());
 
-    	return "branches/addpage";
+    	return "addpage";
 	}
 
     @RequestMapping(value = "/branches/add", method = RequestMethod.POST)
     public String add(@ModelAttribute("branchAttribute") Branch branch) {
 		logger.debug("Received request to add new branch");
 		
-  
 		branchService.add(branch);
 
-    	
-		return "branches/addedpage";
+		return "addedpage";
 	}
- 
-    @RequestMapping(value = "/branches/delete", method = RequestMethod.GET)
-    public String delete(@RequestParam(value="id", required=true) Integer id, 
-    										Model model) {
-   
-		logger.debug("Received request to delete existing branch");
-		
-		branchService.delete(id);
-		
-		model.addAttribute("id", id);
-    	
-    	return "branches/deletedpage";
-	}
+
     
     @RequestMapping(value = "/branches/edit", method = RequestMethod.GET)
     public String getEdit(@RequestParam(value="id", required=true) Integer id,  
@@ -83,7 +70,7 @@ public class BranchController {
     
     	model.addAttribute("branchAttribute", branchService.get(id));
     	
-    	return "branches/editpage";
+    	return "editpage";
 	}
   
     @RequestMapping(value = "/branches/edit", method = RequestMethod.POST)
@@ -98,7 +85,7 @@ public class BranchController {
     	
     	model.addAttribute("id", id);
 		
-    	return "branches/editedpage";
+    	return "editedpage";
 	}
     
     @RequestMapping(value = "/branches/view", method = RequestMethod.GET)
@@ -108,7 +95,7 @@ public class BranchController {
     
     	model.addAttribute("branchAttribute", branchService.get(id));
     	model.addAttribute("departments", departmentService.getAll(id));
-    	return "branches/branchprofile";
+    	return "branchprofile";
 	}
     
 }

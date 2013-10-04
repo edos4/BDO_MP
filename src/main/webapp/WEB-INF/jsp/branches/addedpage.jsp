@@ -16,6 +16,6 @@
 
 <c:url var="mainUrl" value="/branches" />
 <p>Return to <a href="${mainUrl}">Main List</a></p>
-
+<br>
 </body>
 </html>

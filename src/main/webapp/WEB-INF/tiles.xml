@@ -1,25 +1,182 @@
-<!--?xml version="1.0" encoding="UTF-8"?-->
-
- 
+   
+    <!DOCTYPE tiles-definitions PUBLIC  
+           "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+           "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
 
- <definition name="baseLayout" template="/jsp/layout/layout.jsp">
-  <put-attribute name="title" value="SivaLabs" />
-  <put-attribute name="header" value="/jsp/layout/header.jsp" />
-  <put-attribute name="navigation" value="/jsp/layout/navigation.jsp" />
-  <put-attribute name="body" value="" />
-  <put-attribute name="footer" value="/jsp/layout/footer.jsp" />
- </definition>
- 
- <definition name="login" extends="baseLayout">
-  <put-attribute name="title" value="SivaLabs : Login" />
-  <put-attribute name="navigation" value="" />
-  <put-attribute name="body" value="/jsp/login.jsp" />
- </definition>
-  
- <definition name="welcome" extends="baseLayout">
-  <put-attribute name="title" value="SivaLabs : Welcome" />
-  <put-attribute name="body" value="/jsp/welcome.jsp" />
- </definition>
-  
-</tiles-definitions>
+<!-- Branch Controller -->
+	<definition name="branchespage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Branch Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/branches/branchespage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="addedpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/branches/addedpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="addpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/branches/addpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="editpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/branches/editpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="editedpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/branches/editedpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="branchprofile" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/branches/branchprofile.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+<!-- Department Controller -->
+
+	<definition name="daddpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/departments/addpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="daddedpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/departments/addedpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="ddeletedpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/departments/deletedpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="deditpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/departments/editpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="deditedpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/departments/editedpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="ddepartmentprofile" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/departments/departmentprofile.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+<!-- Employee Controller -->
+
+	<definition name="eaddpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/employees/addpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="eaddedpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/employees/addedpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="eaddedpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/employees/addedpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="edeletedpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/employees/deletedpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="eeditpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/employees/editpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="eeditedpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/employees/editedpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="eemployeeprofile" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/employees/employeeprofile.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+<!-- Salary Controller -->
+
+	<definition name="seditpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/salary/editpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="seditedpage" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Added Page" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/salary/editedpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+
+</tiles-definitions>  

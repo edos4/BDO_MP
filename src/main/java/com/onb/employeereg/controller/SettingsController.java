@@ -30,7 +30,7 @@ public class SettingsController {
     
     	model.addAttribute("settingsAttribute", salaryConfigService.get(0));
     	
-    	return "salary/editpage";
+    	return "seditpage";
 	}
   
     @RequestMapping(value = "/settings/edit", method = RequestMethod.POST)
@@ -44,7 +44,7 @@ public class SettingsController {
     	
     	model.addAttribute("id", 0);
 		
-    	return "salary/editedpage";
+    	return "seditedpage";
 	}
     
     

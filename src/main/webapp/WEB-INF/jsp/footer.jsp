@@ -1,3 +1,3 @@
 <center>
- <b>© 2011 SivaLabs All Rights Reserved</b>
+ <b>© 2013 Salinas All Rights Reserved</b>
 </center>

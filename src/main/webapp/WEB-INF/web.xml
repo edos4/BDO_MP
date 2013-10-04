@@ -7,6 +7,11 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
+    <servlet-mapping>
+        <servlet-name>tiles</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>spring</servlet-name>
 		<url-pattern>/</url-pattern>
@@ -15,6 +20,8 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	
 	<!-- 
 	<listener>
     <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>

@@ -13,9 +13,6 @@
 <c:url var="saveUrl" value="/employees/view?id=${employeeAttribute.id}" />
 <form:form modelAttribute="employeeAttribute" method="POST" action="${saveUrl}">
 	<table>
-		<tr>
-			<td><form:label path="id">Id: ${employeeAttribute.id}</form:label></td>
-		</tr>
 	
 		<tr>
 			<td><form:label path="employeeName">Name: ${employeeAttribute.employeeName}</form:label></td>
@@ -32,7 +29,7 @@
 </form:form><br>
 Salary Computation:<br>
 
-<table border="1" bordercolor="#FFCC00" style="background-color:#FFFFCC" width="100%" cellpadding="3" cellspacing="3">
+<table border="1" bordercolor="#0b276e" style="background-color:#FFFFFF" width="100%" cellpadding="3" cellspacing="3">
 	<tr>
 		<td>Gross Salary:</td>
 		<td>${ employeeAttribute.employeeGrossSalary }</td>

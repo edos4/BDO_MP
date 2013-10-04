@@ -13,7 +13,7 @@
 </style>
 </head>
 <body>
-<h1>Branches</h1>
+<h2>Branches</h2>
 
 <c:url var="addUrl" value="/branches/add" />
 <a href="${addUrl}">Add</a><br>
@@ -43,6 +43,6 @@
 <c:if test="${empty branches}">
 	There are currently no branches in the list.
 </c:if>
-
+<br>
 </body>
 </html>
